@@ -1,4 +1,4 @@
-# peter-waterBnB
-Check In + Reviews module for WaterBnB
+# peter-waterBnB-proxy-server
+Proxy server for waterBnB.
 
-This repository will contain two separate modules for waterBnB: Check-In and Reviews. 
+This repository contains the proxy server for waterBnB.
