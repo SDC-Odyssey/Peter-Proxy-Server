@@ -1,16 +1,11 @@
 {
-  "name": "fec-waterbnb-pvu-check-in",
+  "name": "fec-waterbnb-pvu-proxy-server",
   "version": "1.0.0",
-  "description": "Check In module",
+  "description": "proxy server",
   "main": "index.js",
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js",
     "proxy-server-dev": "nodemon proxyServer/index.js",
-    "db-seed": "node server/dbSeeder.js",
-    "test": "jest",
-    "build": "webpack --mode production",
-    "watch": "webpack --watch"
+    "test": "jest"
   },
   "author": "Peter Vu",
   "license": "None",
@@ -20,17 +15,10 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.5",
-    "eslint-plugin-react-hooks": "^4.0.8",
-    "jest": "^26.4.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "eslint-plugin-react-hooks": "^4.0.8"
   },
   "dependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
     "axios": "^0.20.0",
-    "babel-loader": "^8.1.0",
     "bluebird": "^3.7.2",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
@@ -39,8 +27,6 @@
     "moment": "^2.27.0",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.3.4"
   }
