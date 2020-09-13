@@ -21,6 +21,33 @@ app.use(express.static(path.join(__dirname, '/proxyClient'), {
 //   res.end();
 // });
 
+// Picture Service Proxy Here (Port 3001)
+app.get('images', async (req, res) => {
+  try {
+    const images = await axios.get('http://127.0.0.1:3001/images');
+    res.status(200);
+    res.send(images);
+    res.end();
+  } catch {
+    res.sendStatus(404);
+    res.end();
+  }
+});
+
+app.get('images/:roomId', async (req, res) => {
+  try {
+    const roomId = req.params.room_id;
+    const images = await axios.get(`http://127.0.0.1:3001/images/${roomId}`);
+    console.log(images);
+    res.status(200);
+    res.send(images);
+    res.end();
+  } catch {
+    res.sendStatus(404);
+    res.end();
+  }
+});
+
 // Check In Service Proxy Here (Port 3003)
 app.get('/pricing/:room_id', async (req, res) => {
   try {
