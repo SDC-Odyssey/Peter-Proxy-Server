@@ -4,6 +4,10 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
+const localhost = 'http://127.0.0.1';
+const supraAWS = 'http://ec2-54-215-129-94.us-west-1.compute.amazonaws.com';
+const peterAWS = 'http://54.187.6.96';
+// const amandaAWS = 'http://ec2-54-215-129-94.us-west-1.compute.amazonaws.com';
 
 app.use(cors());
 
@@ -52,7 +56,7 @@ app.get('images/:roomId', async (req, res) => {
 app.get('/pricing/:room_id', async (req, res) => {
   try {
     const roomId = req.params.room_id;
-    const pricingResponseObject = await axios.get(`http://127.0.0.1:3003/pricing/${roomId}`);
+    const pricingResponseObject = await axios.get(`${peterAWS}:3003/pricing/${roomId}`);
     const pricingResponseString = JSON.stringify(pricingResponseObject.data);
 
     res.status(200);
@@ -67,7 +71,7 @@ app.get('/pricing/:room_id', async (req, res) => {
 app.get('/availability/:room_id', async (req, res) => {
   try {
     const roomId = req.params.room_id;
-    const availabilityResponseObject = await axios.get(`http://127.0.0.1:3003/availability/${roomId}`);
+    const availabilityResponseObject = await axios.get(`${peterAWS}:3003/availability/${roomId}`);
     const availabilityResponseString = JSON.stringify(availabilityResponseObject.data);
 
     res.status(200);
@@ -82,7 +86,7 @@ app.get('/availability/:room_id', async (req, res) => {
 // Room Service Proxy Here (Port 3002)
 app.get('/rooms', async (req, res) => {
   try {
-    const response = await axios.get('http://127.0.0.1:3002/rooms');
+    const response = await axios.get(`${supraAWS}:3002/rooms`);
     const responseString = JSON.stringify(response.data);
 
     res.status(200);
@@ -97,7 +101,7 @@ app.get('/rooms', async (req, res) => {
 app.get('/rooms/:roomId', async (req, res) => {
   try {
     const { roomId } = req.params;
-    const response = await axios.get(`http://127.0.0.1:3002/rooms/${roomId}`);
+    const response = await axios.get(`${supraAWS}:3002/rooms/${roomId}`);
     const responseString = JSON.stringify(response.data);
     res.status(200);
     res.send(responseString);
@@ -112,7 +116,7 @@ app.get('/rooms/:roomId', async (req, res) => {
 app.get('/rooms/:roomId/title', async (req, res) => {
   try {
     const { roomId } = req.params;
-    const response = await axios.get(`http://127.0.0.1:3002/rooms/${roomId}/title`);
+    const response = await axios.get(`${supraAWS}:3002/rooms/${roomId}/title`);
     const responseString = JSON.stringify(response.data);
 
     res.status(200);
@@ -127,7 +131,7 @@ app.get('/rooms/:roomId/title', async (req, res) => {
 app.get('/rooms/:roomId/overview', async (req, res) => {
   try {
     const { roomId } = req.params;
-    const response = await axios.get(`http://127.0.0.1:3002/rooms/${roomId}/overview`);
+    const response = await axios.get(`${supraAWS}:3002/rooms/${roomId}/overview`);
     const responseString = JSON.stringify(response.data);
 
     res.status(200);
@@ -142,7 +146,7 @@ app.get('/rooms/:roomId/overview', async (req, res) => {
 app.get('/rooms/:roomId/highlights', async (req, res) => {
   try {
     const { roomId } = req.params;
-    const response = await axios.get(`http://127.0.0.1:3002/rooms/${roomId}/highlights`);
+    const response = await axios.get(`${supraAWS}:3002/rooms/${roomId}/highlights`);
     const responseString = JSON.stringify(response.data);
 
     res.status(200);
@@ -157,7 +161,7 @@ app.get('/rooms/:roomId/highlights', async (req, res) => {
 app.get('/rooms/:roomId/description', async (req, res) => {
   try {
     const { roomId } = req.params;
-    const response = await axios.get(`http://127.0.0.1:3002/rooms/${roomId}/description`);
+    const response = await axios.get(`${supraAWS}:3002/rooms/${roomId}/description`);
     const responseString = JSON.stringify(response.data);
 
     res.status(200);
@@ -172,7 +176,7 @@ app.get('/rooms/:roomId/description', async (req, res) => {
 app.get('/rooms/:roomId/sleeping-arranges', async (req, res) => {
   try {
     const { roomId } = req.params;
-    const response = await axios.get(`http://127.0.0.1:3002/rooms/${roomId}/sleeping-arranges`);
+    const response = await axios.get(`${supraAWS}:3002/rooms/${roomId}/sleeping-arranges`);
     const responseString = JSON.stringify(response.data);
 
     res.status(200);
