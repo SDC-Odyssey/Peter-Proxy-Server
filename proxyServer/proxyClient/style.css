@@ -1,7 +1,24 @@
-#checkIn {
-  
+#header{
+  width: 100%;
 }
 
-#images {
+#images{
+  width: 100%;
+}
 
+#homeDesc{
+  width: 60%;
+}
+
+#checkIn{
+  width: 40%;
+  min-width: 200px;
+}
+
+#hostInfo{
+  width: 100%;
+}
+
+#footer{
+  width: 100%;
 }
