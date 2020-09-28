@@ -4,7 +4,8 @@
   "description": "proxy server",
   "main": "index.js",
   "scripts": {
-    "proxy-server-dev": "nodemon proxyServer/index.js",
+    "server-dev": "nodemon proxyServer/index.js",
+    "proxy-dev": "nodemon proxyServer/proxy.js",
     "test": "jest"
   },
   "author": "Peter Vu",
