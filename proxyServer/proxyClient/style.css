@@ -1,24 +1,24 @@
-#checkIn {
-  text-align: right;
-  border: 2px solid #ff395b;
-  padding-right: 5px;
+#header{
+  width: 100%;
 }
 
-#fieldGrid {
-  display: grid;
-  border: royalblue;
+#images{
+  width: 100%;
 }
 
-#checkIn {
-  grid-column-start:1;
-  grid-column-end:2;
-}
-#checkOut {
-  grid-column-start: 2;
-  grid-column-end: 3;
+#homeDesc{
+  width: 60%;
 }
 
-#guests{
-  grid-column-start: 1;
-  grid-column-end: 3;
+#checkIn{
+  width: 40%;
+  min-width: 200px;
+}
+
+#hostInfo{
+  width: 100%;
+}
+
+#footer{
+  width: 100%;
 }
