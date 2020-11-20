@@ -27,6 +27,7 @@
     "express-http-proxy": "^1.6.2",
     "moment": "^2.27.0",
     "mysql2": "^2.1.0",
+    "newrelic": "^7.0.0",
     "nodemon": "^2.0.4",
     "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.3.4"
